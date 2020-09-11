@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    <data>
+        <variable
+            name="myName"
+            type="com.example.aboutme.MyName" />
+    </data>
+
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +22,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/frijole"
         android:gravity="center"
-        android:text="@string/name1" />
+        android:text="@={myName.name}" />
 
     <ImageView
         android:id="@+id/image1"
@@ -49,8 +56,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView"
-        android:visibility="gone" />
+        android:text="@={myName.nickname}"
+        android:visibility="gone"
+
+        />
 
     <ScrollView
         android:id="@+id/scroll1"
@@ -67,3 +76,4 @@
     </ScrollView>
 
 </LinearLayout>
+</layout>
